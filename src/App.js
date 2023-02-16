@@ -8,16 +8,21 @@ class App extends React.Component {
         this.state = {
 
         }
+        this.handleClick = this.handleClick.bind(this);
     }
 
     // add methods/hooks here
-
+    handleClick(event) {
+        const audio = event.target.lastChild;
+        audio.currentTime = 0;
+        audio.play();
+    }
 
     render() {
         return (
             <div>
                 <components.Display />
-                <components.DrumPad />
+                <components.DrumPad handleClick={this.handleClick} />
             </div>
         )
     }
