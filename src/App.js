@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import * as components from './components/export';
 
 class App extends React.Component {
     constructor(props) {
@@ -15,7 +16,8 @@ class App extends React.Component {
     render() {
         return (
             <div>
-
+                <components.Display />
+                <components.DrumPad />
             </div>
         )
     }
