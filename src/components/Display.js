@@ -1,6 +1,6 @@
 export const Display = props => {
     return (
-        <div id="display"></div>
+        <div id="display">{props.clipName}</div>
     )
 }
 

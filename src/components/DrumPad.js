@@ -13,72 +13,72 @@ const clips = {
 export const DrumPad = props => {
     return (
         <div id="pad-container">
-            <button className="drum-pad" id="Heater-1">
-                <span className="letter">Q</span>
+            <button className="drum-pad" id="Heater-1" onClick={props.handleClick}>
+                Q
                 <audio
                     src={clips["Heater-1"]}
                     className="clip"
                     id="Q"
                 />
             </button>
-            <button className="drum-pad" id="Heater-2">
-                <span className="letter">W</span>
+            <button className="drum-pad" id="Heater-2" onClick={props.handleClick}>
+                W
                 <audio
                     src={clips["Heater-2"]}
                     className="clip"
                     id="W"
                 />
             </button>
-            <button className="drum-pad" id="Heater-3">
-                <span className="letter">E</span>
+            <button className="drum-pad" id="Heater-3" onClick={props.handleClick}>
+                E
                 <audio
                     src={clips["Heater-3"]}
                     className="clip"
                     id="E"
                 />
             </button>
-            <button className="drum-pad" id="Heater-4">
-                <span className="letter">A</span>
+            <button className="drum-pad" id="Heater-4" onClick={props.handleClick}>
+                A
                 <audio
                     src={clips["Heater-4"]}
                     className="clip"
                     id="A"
                 />
             </button>
-            <button className="drum-pad" id="Clap">
-                <span className="letter">S</span>
+            <button className="drum-pad" id="Clap" onClick={props.handleClick}>
+                S
                 <audio
                     src={clips["Clap"]}
                     className="clip"
                     id="S"
                 />
             </button>
-            <button className="drum-pad" id="Open-HH">
-                <span className="letter">D</span>
+            <button className="drum-pad" id="Open-HH" onClick={props.handleClick}>
+                D
                 <audio
                     src={clips["Open-HH"]}
                     className="clip"
                     id="D"
                 />
             </button>
-            <button className="drum-pad" id="Kick-n-Hat">
-                <span className="letter">Z</span>
+            <button className="drum-pad" id="Kick-n-Hat" onClick={props.handleClick}>
+                Z
                 <audio
                     src={clips["Kick-n-Hat"]}
                     className="clip"
                     id="Z"
                 />
             </button>
-            <button className="drum-pad" id="Kick">
-                <span className="letter">X</span>
+            <button className="drum-pad" id="Kick" onClick={props.handleClick}>
+                X
                 <audio
                     src={clips["Kick"]}
                     className="clip"
                     id="X"
                 />
             </button>
-            <button className="drum-pad" id="Closed-HH">
-                <span className="letter">C</span>
+            <button className="drum-pad" id="Closed-HH" onClick={props.handleClick}>
+                C
                 <audio
                     src={clips["Closed-HH"]}
                     className="clip"
