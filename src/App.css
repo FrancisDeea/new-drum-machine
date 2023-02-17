@@ -1,0 +1,86 @@
+#drum-machine {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 350px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(26, 26, 148);
+}
+
+#display {
+    border: 1px solid rgb(138, 138, 138);
+    width: 200px;
+    height: 50px;
+    margin: 0 0 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: rgb(255, 208, 0);
+    background-color: black;
+}
+
+#pad-container {
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px
+}
+
+.drum-pad {
+    flex-basis: 30%;
+    aspect-ratio: 1/1;
+    border-radius: 15px;
+    box-shadow: 1.5px 2px 1px rgb(216, 215, 215);
+}
+
+#Heater-1 {
+    border: 2px solid rgb(114, 114, 253);
+    background-color: rgb(187, 187, 254);
+}
+
+#Heater-2 {
+    border: 2px solid rgb(116, 254, 178);
+    background-color: rgb(188, 254, 218);
+}
+
+#Heater-3 {
+    border: 2px solid rgb(252, 177, 65);
+    background-color: rgb(255, 228, 187);
+}
+
+#Heater-4 {
+    border: 2px solid rgb(199, 116, 254);
+    background-color: rgb(228, 187, 255);
+}
+
+#Clap {
+    border: 2px solid rgb(254, 87, 87);
+    background-color: rgb(255, 183, 183);
+}
+
+#Open-HH {
+    border: 2px solid rgb(113, 222, 252);
+    background-color: rgb(187, 240, 255);
+}
+
+#Kick-n-Hat {
+    border: 2px solid rgb(176, 253, 94);
+    background-color: rgb(228, 255, 200);
+}
+
+#Kick {
+    border: 2px solid rgb(252, 250, 99);
+    background-color: rgb(255, 254, 202);
+}
+
+#Closed-HH {
+    border: 2px solid rgb(132, 132, 132);
+    background-color: rgb(240, 241, 241);
+}

@@ -26,8 +26,8 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
-                <components.Display  clipName={this.state.display} />
+            <div id="drum-machine">
+                <components.Display clipName={this.state.display} />
                 <components.DrumPad handleClick={this.handleClick} />
             </div>
         )
