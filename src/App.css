@@ -37,7 +37,9 @@
     flex-basis: 30%;
     aspect-ratio: 1/1;
     border-radius: 15px;
-    box-shadow: 1.5px 2px 1px rgb(216, 215, 215);
+    box-shadow: 1.5px 2px 1px rgb(255, 255, 255);
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 #Heater-1 {
