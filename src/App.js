@@ -2,11 +2,6 @@ import React from 'react';
 import './App.css';
 import * as components from './components/export';
 
-const pressedStyle = {
-    boxShadow: "none",
-    transform: "translate(2px, 2px) scale(0.9)"
-}
-
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -14,8 +9,9 @@ class App extends React.Component {
             display: "",
             isPressed: false
         }
-        this.handleClick = this.handleClick.bind(this);
+        this.playSound = this.playSound.bind(this);
         this.handleKeyPress = this.handleKeyPress.bind(this);
+        this.activateStyle = this.activateStyle.bind(this);
     }
 
     // add methods/hooks here
@@ -26,36 +22,45 @@ class App extends React.Component {
     componentWillUnmount() {
         document.addEventListener("keydown", this.handleKeyPress)
     }
-    handleKeyPress(event) {
-        const letter = event.key.toUpperCase();
-        const audio = document.getElementById(letter);
-        if (audio != null) {
-            const sample = audio.parentElement.id;
-            this.setState({
-                display: sample
-            })
-            audio.currentTime = 0;
-            audio.play()
-        }
+
+    activateStyle(sample) {
+        const button = document.getElementById(sample);
+        const pressed = "box-shadow: none; transform: translate(2px, 2px) scale(0.9); transition: all 0.2s"
+        const notPressed = "boxShadow: 1.5px 2px 1px rgb(255, 255, 255); transform: none; transition: all 0.1s"
+        button.style.cssText = pressed;
+        setTimeout(() => {
+            button.style.cssText = notPressed;
+        }, 150)
     }
 
-    handleClick(event) {
-        // set sample name as <display> state to show off itself when its playing
-        const sample = event.target.id;
+    handleKeyPress(e) {
+        const audio = document.getElementById(e.key.toUpperCase());
+        if (audio !== null) {this.playSound(audio)}
+    }
+
+    playSound(e) {
+        let sample = "";
+        if (e.className === 'clip') {
+            e.play();
+            e.currentTime = 0;
+            sample = e.parentNode.id;
+        } else {
+            sample = e.target.id;
+            const audio = e.target.lastChild;
+            audio.play();
+            audio.currentTime = 0;
+        }
         this.setState({
             display: sample
         })
-        // set function to play sounds when button is clicked
-        const audio = event.target.lastChild;
-        audio.currentTime = 0;
-        audio.play();
+        this.activateStyle(sample);
     }
 
     render() {
         return (
             <div id="drum-machine">
                 <components.Display clipName={this.state.display} />
-                <components.DrumPad handleClick={this.handleClick} />
+                <components.DrumPad handleClick={this.playSound} />
             </div>
         )
     }
